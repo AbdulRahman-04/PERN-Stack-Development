@@ -1,0 +1,58 @@
+Linux is a free and open-source Unix-like operating system kernel
+created by Linus Torvalds in 1991. Linux distributions (Ubuntu, Fedora, Arch, etc.) provide both command-line (CLI) and graphical user interface (GUI).
+
+why is linux so popular ? 
+ 
+ - Free and open source 
+ - Highly Secure 
+ - Highly stable and low maintainence 
+ - large community support 
+
+
+LINUX IMPORTANT COMMANDS : 
+
+PWD -> shows present working dorectory 
+LS -> list out all files and folders inside current directory
+LS -A -> shows hidden files and folders 
+ls -l filename-> see file permissions of any file 
+CD -> change directory
+mkdir -> make directory 
+rmdir -> remove empty directory 
+rm -> deletes files 
+cp -> copy files / directories 
+mv -> move files or rename files 
+touch -> create files 
+find -> search for files and directories
+locate -> find a file by name 
+stat -> show detailed information about a file 
+tree -> display files in a directory as tree form 
+
+
+CAT -> view file content 
+echo -> display text or write text into a file
+nano -> text editor used to write inside a file using text editor.
+TAC -> show file content in reverse order 
+more/less -> view file page by page 
+head -> view first few lines of file 
+tail -> view last few lines of file 
+diff -> compare two files line by line 
+cmp -> compare two files byte by byte 
+whoami -> shows my username
+history -> shows all cmd used by me in past
+
+
+FILE PERMISSIONS CMD'S
+CHMOD -> change file permissions  (number 0 - 775) ( chmod 750 filename)
+chown -> change file ownershp
+chgrp -> change group ownership 
+umask -> set default permissions for new file 
+
+
+ifconfig -> show network interface details 
+ping -> ping any url to check internet 
+netstat -> display network connections
+ss -> show active socket connections
+wget -> download files from the web 
+curl -> send HTTP requests and transfer data from URLs
+uptime -> show system uptime
+uname -a -> show system info 
