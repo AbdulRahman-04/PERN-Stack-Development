@@ -152,8 +152,7 @@
 
 // // Greet();
 
-
-// // DATE AND TIME IN JS: 
+// // DATE AND TIME IN JS:
 // const now = new Date();
 
 // console.log(now.getFullYear());
@@ -165,52 +164,120 @@
 // console.log(now.getMinutes());
 // console.log(now.getSeconds());
 
-// // human readable form : 
+// // human readable form :
 // console.log(now.toDateString());
 // console.log(now.toTimeString());
 // console.log(now.toLocaleString());
 
+// Spread and Rest Operator :
 
-// Spread and Rest Operator : 
-
-// spread operator : The spread operator (...) is used to expand (spread) 
+// spread operator : The spread operator (...) is used to expand (spread)
 // the elements of an array or the properties of an object into another array, object, or function call.
 
-// basic spread of array 
-let arr = [1,2,3,4]
+// basic array and object spreading:
+let arr = [1, 2, 3, 4, 5];
 // console.log(...arr);
 
+// we can't spread a normal obj directly, we need to spread one obj into another
+const obj6 = {
+  name: "rxhman",
+  clg: "dcet",
+};
 
-// spread old array into new array 
-const frontend = ["HTML", "CSS"];
-let UiStack = [...frontend, "JavaScript", "TypeScript"]
-console.log(UiStack);
+const student = {
+  ...obj6,
+  isAlive: true,
+};
 
+console.log(student);
 
+// spreading two arrays into one array
+let arr1 = [24, 25];
+let arr2 = [26, 27];
 
-// merging two arrays:
-let arr1 = [1,2]
-let arr2 = [3,4]
+let arr3 = [...arr1, ...arr2];
+// console.log(arr3);
 
-let arr3 = [...arr1, ...arr2]
-console.log(arr3);
+// Rest Operator: collecting many values into one variable.
+function data(...nums) {
+  console.log(nums);
+}
+data(42, 46, 49);
 
+// array destructuring
+let myArr = [12, 14, 16, 18, 20];
 
-// merging one obj into another 
-const user = {
-    name: "Rahman"
+const [firstVal, ...nums] = myArr;
+// console.log(firstVal);
+// console.log(nums);
+
+// object destructuring :
+let details = {
+  name: "Rahman",
+  age: 21,
+  city: "Hyderabad",
+};
+
+const { name, ...otherDetails } = details;
+console.log(name);
+// console.log(otherDetails);
+
+// Using spread operator, create a new array by adding:
+const backend = ["Node", "NestJS"];
+const newBackend = [...backend, "PostgreSQL", "Drizzle"];
+console.log(newBackend);
+
+// Merge all three arrays into one using spread.
+const arr11 = [1, 2];
+const arr12 = [3, 4];
+const arr13 = [5, 6];
+
+const newArray = [...arr11, ...arr12, ...arr13];
+console.log(newArray);
+
+// Create a new object using spread and:
+// change age to 22
+// add city: "Hyderabad"
+
+const user1 = {
+  name: "Rahman",
+  age: 21,
 };
 
 const updatedUser = {
-    ...user,
-    city: "Hyderabad"
-}
+  ...user1,
+  city: "Hyderabad",
+  age: 22,
+};
 
 console.log(updatedUser);
 
+// rest operator:
+// Create a function with many arguements nd one parameter
+function primeNums(...nums) {
+  console.log(nums);
+}
+
+primeNums(10,20,30,40,50)
 
 
+// Using array destructuring + rest operator: store apple in first var and others using rest operator.
+const fruits = ["Apple", "Mango", "Banana", "Orange"];
+const [first, ...allFruits] = fruits
+console.log(first);
+console.log(allFruits);
 
 
+// Using object destructuring + rest operator: store name seperately nd remaining prop in one var
 
+const student10 = {
+    studName: "Rahman",
+    age: 21,
+    city: "Hyderabad",
+    college: "DCET"
+};
+
+const {studName, ...otherProp} = student10
+console.log(studName);
+console.log(otherProp);
 
