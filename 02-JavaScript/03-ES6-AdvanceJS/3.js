@@ -74,7 +74,7 @@ function takeOrder() {
       const err = true;
       if (err) {
         reject(new Error("err taking order, no waiters found"));
-        return
+        return;
       }
       console.log(`taking order`);
       resolve();
@@ -136,7 +136,7 @@ function generateRollNo() {
       const err = true;
       if (err) {
         reject(new Error("error generating roll no"));
-        return
+        return;
       }
       console.log(`roll no generated`);
       resolve();
@@ -153,13 +153,66 @@ function sendConfirm() {
   });
 }
 
+// function main() {
+//   verifyDocs()
+//     .then(payFees)
+//     .then(generateRollNo)
+//     .then(sendConfirm)
+//     .catch((err) => {
+//       console.log(`err: `, err.message);
+//     });
+// }
+
+// // main();
+
+function checkInventory() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`checking inventory`);
+      resolve();
+    }, 1000);
+  });
+}
+
+function createOrder() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`creating order`);
+      resolve();
+    }, 600);
+  });
+}
+
+function chargePayment() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const err = true;
+      if (err) {
+        reject(new Error(`err while chaarging payments`));
+      }
+      console.log(`charging payment`);
+      resolve();
+    }, 700);
+  });
+}
+
+function sendInvoice() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`send invoice`);
+      resolve();
+    }, 1100);
+  });
+}
+
 function main() {
-  verifyDocs()
-    .then(payFees)
-    .then(generateRollNo)
-    .then(sendConfirm)
+  checkInventory()
+    .then(createOrder)
+    .then(chargePayment)
+    .then(sendInvoice)
     .catch((err) => {
-      console.log(`err: `, err.message);
+      console.log(err, err.message);
+      return;
     });
 }
 
