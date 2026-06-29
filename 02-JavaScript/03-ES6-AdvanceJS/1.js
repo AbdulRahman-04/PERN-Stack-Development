@@ -176,40 +176,46 @@
 
 // basic array and object spreading:
 let arr = [1, 2, 3, 4, 5];
-// console.log(...arr);
+console.log(...arr);
 
 // we can't spread a normal obj directly, we need to spread one obj into another
 const obj6 = {
-  name: "rxhman",
-  clg: "dcet",
+  name: "rxhmann04",
+  age: 22,
 };
 
-const student = {
+// console.log(...obj6); a normal obj cannot be spread!
+
+const studDetails = {
   ...obj6,
   isAlive: true,
 };
 
-console.log(student);
+// console.log(studDetails);
 
 // spreading two arrays into one array
 let arr1 = [24, 25];
 let arr2 = [26, 27];
 
 let arr3 = [...arr1, ...arr2];
-// console.log(arr3);
+console.log(arr3);
 
 // Rest Operator: collecting many values into one variable.
-function data(...nums) {
+function sum(...nums) {
   console.log(nums);
 }
-data(42, 46, 49);
 
+sum(12, 49, 34, 56, 48, 54);
 // array destructuring
 let myArr = [12, 14, 16, 18, 20];
 
-const [firstVal, ...nums] = myArr;
-// console.log(firstVal);
-// console.log(nums);
+const [firstVal, secVal, ...allValues] = myArr
+console.log(firstVal);
+console.log(secVal);
+console.log(allValues);
+
+
+
 
 // object destructuring :
 let details = {
@@ -218,22 +224,26 @@ let details = {
   city: "Hyderabad",
 };
 
-const { name, ...otherDetails } = details;
+const {name, ...otherDetails} = details
 console.log(name);
-// console.log(otherDetails);
+console.log(otherDetails);
+
+
 
 // Using spread operator, create a new array by adding:
 const backend = ["Node", "NestJS"];
-const newBackend = [...backend, "PostgreSQL", "Drizzle"];
-console.log(newBackend);
+const stack = [...backend, "Postresql", "mongodb"]
+console.log(stack);
+
 
 // Merge all three arrays into one using spread.
 const arr11 = [1, 2];
 const arr12 = [3, 4];
 const arr13 = [5, 6];
 
-const newArray = [...arr11, ...arr12, ...arr13];
-console.log(newArray);
+const arr14 = [...arr11, ...arr12, ...arr13]
+console.log(arr14);
+
 
 // Create a new object using spread and:
 // change age to 22
@@ -246,38 +256,35 @@ const user1 = {
 
 const updatedUser = {
   ...user1,
-  city: "Hyderabad",
-  age: 22,
-};
-
+  age : 22
+}
 console.log(updatedUser);
 
 // rest operator:
 // Create a function with many arguements nd one parameter
-function primeNums(...nums) {
+function primseNums(...nums){
   console.log(nums);
+  
 }
 
-primeNums(10,20,30,40,50)
-
+primseNums(10,20,30,40,50)
 
 // Using array destructuring + rest operator: store apple in first var and others using rest operator.
 const fruits = ["Apple", "Mango", "Banana", "Orange"];
-const [first, ...allFruits] = fruits
-console.log(first);
+const [firstVar, ...allFruits] = fruits
+console.log(firstVal);
 console.log(allFruits);
 
 
 // Using object destructuring + rest operator: store name seperately nd remaining prop in one var
 
 const student10 = {
-    studName: "Rahman",
-    age: 21,
-    city: "Hyderabad",
-    college: "DCET"
+  studName: "Rahman",
+  age: 21,
+  city: "Hyderabad",
+  college: "DCET",
 };
 
-const {studName, ...otherProp} = student10
-console.log(studName);
-console.log(otherProp);
+const {studName, ...otherDetailsStud} = student10
+console.log(studName, otherDetails);
 
