@@ -20,32 +20,38 @@
 // Therefore, we use another await
 // to get the final JavaScript object.
 
+// async function getData() {
+
+//     const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+
+//     const data = await response.json();
+
+//     console.log(data);
+
+// }
+
+// // getData();
+
 async function getData() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const jsonData = await response.json();
+  console.log(jsonData);
+}
 
-    const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+// getData()
 
-    const data = await response.json();
+function getPromiseData() {
+  return fetch("https://jsonplaceholder.typicode.com/todos/1").then(
+    (response) => {
+      return response.json();
+    }
+  );
+}
 
+function main() {
+  getPromiseData().then((data) => {
     console.log(data);
-
+  });
 }
 
-// getData();
-
-
-function getPromiseData(){
- 
-    return fetch("https://jsonplaceholder.typicode.com/todos/1").then((response)=>{
-        return response.json();
-    })
-
-}
-
-function main(){
-    getPromiseData().then((data)=>{
-        console.log(data);
-        
-    })
-}
-
-main()
+main();
