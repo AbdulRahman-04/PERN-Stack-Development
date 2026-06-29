@@ -106,59 +106,106 @@
 
 // main();
 
-function checkUserName(callback) {
+// function checkUserName(callback) {
+//   setTimeout(() => {
+//     console.log(`checking username`);
+//     callback();
+//   },1000);
+// }
+
+// function hashPassword(callback) {
+//   setTimeout(() => {
+//     console.log(`hashing pass`);
+//     const error = new Error("error while hashing password");
+//     callback(error);
+//   },1200);
+// }
+
+// function saveUser(callback) {
+//   setTimeout(() => {
+//     console.log(`saving user`);
+//     callback();
+//   },1400);
+// }
+// function generateJWT(callback) {
+//   setTimeout(() => {
+//     console.log(`generating jwt`);
+//     callback();
+//   },1600);
+// }
+
+// function sendEmail(callback) {
+//   setTimeout(() => {
+//     console.log(`sending email`);
+//     callback();
+//   },1800);
+// }
+
+// function main() {
+//   checkUserName(() => {
+//     hashPassword((error) => {
+//       if (error) {
+//         console.log(error);
+//       }
+//       saveUser(() => {
+//         generateJWT(() => {
+//           sendEmail(() => {
+//             console.log(`user created successfully!`);
+//           });
+//         });
+//       });
+//     });
+//   });
+
+//   console.log(`processing other users`);
+
+// }
+
+// main()
+
+function checkInventory(callback) {
   setTimeout(() => {
-    console.log(`checking username`);
+    console.log(`checking inventory`);
     callback();
-  },1000);
+  }, 1000);
 }
 
-function hashPassword(callback) {
+function createOrder(callback) {
   setTimeout(() => {
-    console.log(`hashing pass`);
-    const error = new Error("error while hashing password");
+    const error = new Error("error creating order");
+    console.log(`creating order`);
     callback(error);
-  },1200);
+  }, 500);
 }
 
-function saveUser(callback) {
+function chargePayment(callback) {
   setTimeout(() => {
-    console.log(`saving user`);
+    console.log(`charging payment`);
     callback();
-  },1400);
-}
-function generateJWT(callback) {
-  setTimeout(() => {
-    console.log(`generating jwt`);
-    callback();
-  },1600);
+  }, 1222);
 }
 
-function sendEmail(callback) {
+function sendInvoice(callback) {
   setTimeout(() => {
-    console.log(`sending email`);
+    console.log(`sending invoice`);
     callback();
-  },1800);
+  }, 2200);
 }
 
 function main() {
-  checkUserName(() => {
-    hashPassword((error) => {
+  checkInventory(() => {
+    createOrder((error) => {
       if (error) {
-        console.log(error);
+        console.log(error.name, error.message);
+        // return;
       }
-      saveUser(() => {
-        generateJWT(() => {
-          sendEmail(() => {
-            console.log(`user created successfully!`);
-          });
+      chargePayment(() => {
+        sendInvoice(() => {
+          console.log(`purchase successful!`);
         });
       });
     });
   });
-
-  console.log(`processing other users`);
-  
 }
 
-main()
+main();
